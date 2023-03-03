@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lotto 검색기</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>Lotto 검색기</h1>
+<form method="POST" action="/result">
+    <div>
+        <label for="num1">Number 1:</label>
+        <input type="number" name="fixedNumbers[]" id="num1" required>
+    </div>
+    <div>
+        <label for="num2">Number 2:</label>
+        <input type="number" name="fixedNumbers[]" id="num2" required>
+    </div>
+    <div>
+        <label for="num3">Number 3:</label>
+        <input type="number" name="fixedNumbers[]" id="num3" required>
+    </div>
+    <div>
+        <label for="num4">Number 4:</label>
+        <input type="number" name="fixedNumbers[]" id="num4" required>
+    </div>
+    <div>
+        <label for="num5">Number 5:</label>
+        <input type="number" name="fixedNumbers[]" id="num5" required>
+    </div>
+    <div>
+        <label for="num6">Number 6:</label>
+        <input type="number" name="fixedNumbers[]" id="num6" required>
+    </div>
+    <div id="combinationNumbers">
+        <label>Combination Numbers:</label>
+        <div>
+            <input type="number" name="combinationNumbers[]" class="combinationNumber" required>
+            <input type="number" name="combinationNumbers[]" class="combinationNumber" required>
+            <input type="number" name="combinationNumbers[]" class="combinationNumber" required>
+            <input type="number" name="combinationNumbers[]" class="combinationNumber" required>
+            <input type="number" name="combinationNumbers[]" class="combinationNumber" required>
+        </div>
+        <button type="button" id="addCombinationNumber">변수 번호 추가</button>
+    </div>
+    <button type="submit">검색</button>
+</form>
+
+<script>
+    $(document).ready(function() {
+        $('#addCombinationNumber').click(function() {
+            $('#combinationNumbers div').append('<input type="number" name="combinationNumbers[]" class="combinationNumber" required>');
+        });
+    });
+</script>
+</body>
+</html>

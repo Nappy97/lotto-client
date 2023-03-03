@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>결과창</title>
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-color: #9ABAD9;
+            border-spacing: 0;
+        }
+
+        .tg td {
+            background-color: #EBF5FF;
+            border-color: #9ABAD9;
+            border-style: solid;
+            border-width: 0px;
+            color: #444;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg th {
+            background-color: #409cff;
+            border-color: #9ABAD9;
+            border-style: solid;
+            border-width: 0px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg .tg-0pky {
+            border-color: inherit;
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-0lax {
+            text-align: left;
+            vertical-align: top
+        }
+    </style>
+</head>
+<body>
+<h1>Lotto Client - Result</h1>
+<table class="tg">
+    <thead>
+    <tr>
+        <th class="tg-0pky">당첨된 번호</th>
+        <th class="tg-0lax">틀린 번호</th>
+        <th class="tg-0lax">등수</th>
+        <th class="tg-0lax">회차</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="r : ${result}">
+        <td class="tg-0lax" th:text="${r.matchedNumbers} "></td>
+        <td class="tg-0lax" th:text="${r.unmatchedNumbers} "></td>
+        <td class="tg-0lax" th:text="${r.ranking}"></td>
+        <td class="tg-0lax" th:text="${r.turn} "></td>
+    </tr>
+    </tbody>
+</body>
+</html>

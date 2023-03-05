@@ -54,7 +54,8 @@
 <table class="tg">
     <thead>
     <tr>
-        <th class="tg-0pky">당첨된 번호</th>
+        <th class="tg-0pky">입력된 번호</th>
+        <th class="tg-0lax">당첨된 번호</th>
         <th class="tg-0lax">틀린 번호</th>
         <th class="tg-0lax">등수</th>
         <th class="tg-0lax">회차</th>
@@ -62,6 +63,7 @@
     </thead>
     <tbody>
     <tr th:each="r : ${result}">
+        <td class="tg-0lax" th:text="${r.sentNumbers}"></td>
         <td class="tg-0lax" th:text="${r.matchedNumbers} "></td>
         <td class="tg-0lax" th:text="${r.unmatchedNumbers} "></td>
         <td class="tg-0lax" th:text="${r.ranking}"></td>

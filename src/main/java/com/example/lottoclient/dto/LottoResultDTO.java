@@ -16,4 +16,5 @@ public class LottoResultDTO {
     private int ranking;
     private List<Integer> matchedNumbers;
     private List<Integer> unmatchedNumbers;
+    private List<Integer> sentNumbers;
 }

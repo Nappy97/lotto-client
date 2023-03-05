@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <title>Lotto 검색기</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style type="text/css">
+        .error-message p{
+            font-size: 50px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 <h1>Lotto 검색기</h1>
+<div th:if="${not #strings.isEmpty(errorMessage1)}" class="error-message">
+    <p th:text="${errorMessage1}"></p>
+</div>
+<div th:if="${not #strings.isEmpty(errorMessage2)}" class="error-message">
+    <p th:text="${errorMessage2}"></p>
+</div>
+<div th:if="${not #strings.isEmpty(errorMessage3)}" class="error-message">
+    <p th:text="${errorMessage3}"></p>
+</div>
+
 <form method="POST" action="/result">
     <div>
         <label for="num1">Number 1:</label>
@@ -33,7 +50,7 @@
         <input type="number" name="fixedNumbers[]" id="num6" required>
     </div>
     <div id="combinationNumbers">
-        <label>Combination Numbers:</label>
+        <label>조합 Numbers:</label>
         <div>
             <input type="number" name="combinationNumbers[]" class="combinationNumber" required>
             <input type="number" name="combinationNumbers[]" class="combinationNumber" required>
@@ -52,6 +69,7 @@
             $('#combinationNumbers div').append('<input type="number" name="combinationNumbers[]" class="combinationNumber" required>');
         });
     });
+
 </script>
 </body>
 </html>

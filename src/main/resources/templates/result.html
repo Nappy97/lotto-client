@@ -8,6 +8,7 @@
             border-collapse: collapse;
             border-color: #9ABAD9;
             border-spacing: 0;
+            width: 70%;
         }
 
         .tg td {
@@ -47,6 +48,14 @@
             text-align: left;
             vertical-align: top
         }
+
+        .match {
+            color: blue;
+        }
+
+        .unmatch{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -64,8 +73,8 @@
     <tbody>
     <tr th:each="r : ${result}">
         <td class="tg-0lax" th:text="${r.sentNumbers}"></td>
-        <td class="tg-0lax" th:text="${r.matchedNumbers} "></td>
-        <td class="tg-0lax" th:text="${r.unmatchedNumbers} "></td>
+        <td class="tg-0lax" style="color: blue" th:text="${r.matchedNumbers} "></td>
+        <td class="tg-0lax" style="color: red" th:text="${r.unmatchedNumbers} "></td>
         <td class="tg-0lax" th:text="${r.ranking}"></td>
         <td class="tg-0lax" th:text="${r.turn} "></td>
     </tr>
